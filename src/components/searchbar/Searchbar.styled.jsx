@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const HeaderForm=styled.header` display: flex;
+export const HeaderForm = styled.header` display: flex;
 justify-content: center;
 align-items: center;
 background-color: #4354b0;
@@ -9,7 +9,7 @@ padding-bottom: 10px;
 margin-bottom: 20px;
 `;
 
-export const SearchForm=styled.form` display: flex;
+export const SearchForm = styled.form` display: flex;
 align-items: center;
 width: 100%;
 max-width: 600px;
@@ -18,11 +18,11 @@ border-radius: 3px;
 overflow: hidden;
 `;
 
-export const SearchFormButton=styled.button` display: inline-block;
+export const SearchFormButton = styled.button` display: inline-block;
 width: 48px;
 height: 48px;
 border: 0;
-background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+// background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
 background-size: 40%;
 background-repeat: no-repeat;
 background-position: center;
@@ -37,7 +37,7 @@ outline: none;
 
 `;
 
-export const SearchFormButtonLabel=styled.span` position: absolute;
+export const SearchFormButtonLabel = styled.span` position: absolute;
 width: 1px;
 height: 1px;
 padding: 0;
@@ -48,7 +48,7 @@ clip-path: inset(50%);
 border: 0;
 `;
 
-export const SearchFormInput=styled.input` display: inline-block;
+export const SearchFormInput = styled.input` display: inline-block;
 width: 100%;
 font: inherit;
 font-size: 20px;
