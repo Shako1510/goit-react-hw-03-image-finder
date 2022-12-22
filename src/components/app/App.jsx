@@ -49,8 +49,6 @@ export class App extends Component {
         const newImages = [...this.state.images, ...result.images];
         this.setState({ images: newImages, total: result.total })
 
-
-
       })
       .catch(error => this.setState({ error: error }))
       .finally(() => this.setState({ loading: false }));
