@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import Searchbar from '../searchbar/Searchbar';
-import ImageGallery from '../imageGallery/ImageGallery';
+import Searchbar from '../Searchbar/Searchbar';
+import ImageGallery from '../ImageGallery/ImageGallery';
 import { getGalleryData } from 'servises/Api';
 
-import { Gallery } from '../imageGallery/ImageGallery.styled';
-import Button from '../button/Button';
-import Loader from '../loader/Loader';
+import { Gallery } from '../ImageGallery/ImageGallery.styled';
+import Button from '../Button/Button';
+import Loader from '../Loader/Loader';
 
 export class App extends Component {
   state = {
@@ -17,18 +17,12 @@ export class App extends Component {
     total: 1,
   };
 
-  async componentDidMount() {
-    //   this.getImages();
-  }
 
   async componentDidUpdate(prevProps, prevState) {
-    if (prevState.query !== this.state.query) {
-      this.getImages();
-    }
 
     if (
-      prevState.page !== this.state.page &&
-      prevState.query === this.state.query
+      prevState.page !== this.state.page ||
+      prevState.query !== this.state.query
     ) {
       this.getImages();
     }
@@ -53,10 +47,15 @@ export class App extends Component {
     await getGalleryData(this.state.query, this.state.page)
       .then(result => {
         const newImages = [...this.state.images, ...result.images];
-        this.setState({ images: newImages, total: result.total });
+        this.setState({ images: newImages, total: result.total })
+
+
+
       })
       .catch(error => this.setState({ error: error }))
       .finally(() => this.setState({ loading: false }));
+
+
   }
 
   scrollPage() {
