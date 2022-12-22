@@ -15,6 +15,7 @@ class Searchbar extends Component {
         query: '',
     };
 
+
     handleInput = event => {
         const query = event.currentTarget.value;
         this.setState({ query: query });
