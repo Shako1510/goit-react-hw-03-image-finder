@@ -15,6 +15,7 @@ export class App extends Component {
     error: null,
     page: 1,
     total: 1,
+    isModalopen: false,
   };
 
 

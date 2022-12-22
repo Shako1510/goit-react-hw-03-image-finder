@@ -6,9 +6,7 @@ import { Overlay, ModalContainer } from './Modal.styled';
 const modalRoot = document.querySelector('#modal-root');
 
 export class Modal extends Component {
-    state = {
-        isModalopen: false,
-    };
+
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
