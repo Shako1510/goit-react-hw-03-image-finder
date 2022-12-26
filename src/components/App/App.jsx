@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import Searchbar from './Searchbar';
-import ImageGallery from './ImageGallery';
+import Searchbar from '../SearchBar/Searchbar';
+import ImageGallery from '../ImageGallery/ImageGallery';
 import { getGalleryData } from 'servises/Api';
 
-import { Gallery } from './ImageGallery.styled';
-import Button from './Button';
-import Loader from './Loader';
+import { Gallery } from '../ImageGallery/ImageGallery.styled';
+import Button from '../Button/Button';
+import Loader from '../Loader/Loader';
 
 export class App extends Component {
   state = {
@@ -49,6 +49,9 @@ export class App extends Component {
       .then(result => {
         const newImages = [...this.state.images, ...result.images];
         this.setState({ images: newImages, total: result.total })
+        // if (result.status === 200) {
+        //   this.scrollPage();
+        // }
 
       })
       .catch(error => this.setState({ error: error }))
